@@ -27,7 +27,7 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-advertising = datasets.advertising()
+advertising = datasets.load_advertising()
 X = advertising.data
 Y = advertising.target
 
