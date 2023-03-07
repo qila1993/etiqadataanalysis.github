@@ -19,7 +19,7 @@ def user_input_features():
             'Radio_ad': Radio_ad,
             'Newspaper_ad': Newspaper_ad,
             'Sales_ad': Sales_ad}
-    features = pd.DataFrame(data, index=[0])
+    features = pd.DataFrame(data, index=[10])
     return features
 
 df = user_input_features()
