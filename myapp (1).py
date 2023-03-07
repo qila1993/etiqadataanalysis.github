@@ -36,11 +36,7 @@ clf = RandomForestClassifier()
 clf.fit(X, Y)
 
 prediction = clf.predict(df)
-prediction_proba = clf.predict_proba(df)
 
 st.subheader('Prediction')
-st.write(advertising.target_names[prediction])
-#st.write(prediction)
+st.write(prediction)
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
