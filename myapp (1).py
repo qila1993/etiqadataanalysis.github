@@ -19,7 +19,7 @@ def user_input_features():
             'Radio_ad': Radio_ad,
             'Newspaper_ad': Newspaper_ad,
             'Sales_ad': Sales_ad}
-    features = pd.DataFrame(data, index=[10])
+    features = pd.DataFrame(data, index=[0])
     return features
 
 df = user_input_features()
@@ -27,9 +27,10 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-advertising = pd.read_csv('Advetising.csv')
-X = advertising.data
-Y = advertising.target
+dfdata = pd.read_csv("Advetising.csv")
+dfdata = dfdata.drop(['Unnamed:0'],axis=1)
+X = dfdata.drop(['Sales'],axis=1)
+Y = dfdata.Sales
 
 clf = RandomForestClassifier()
 clf.fit(X, Y)
